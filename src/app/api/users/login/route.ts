@@ -35,14 +35,14 @@ export async function POST(request: NextRequest){
           { status: 200 }
         );
 
-        response.cookies.set("accessToken", accessToken);
-        response.cookies.set("refreshToken", refreshToken);
+        response.cookies.set("accessToken", accessToken, {httpOnly: true, secure: true});
+        response.cookies.set("refreshToken", refreshToken, {httpOnly: true, secure: true});
     
         return response;
     } catch (error) {
         console.log("Something went wrong",error);
         return NextResponse.json({
             message: "Something went wrong"
-        }),{status: 400}
+        },{status: 400});
     }
 }
