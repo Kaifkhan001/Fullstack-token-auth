@@ -25,7 +25,7 @@ const Logout = () => {
         }
 
         logoutUser();
-    }, []); 
+    }, [router, setIsLoggedIn]); 
   return (
     <div className='w-full h-[70vh] flex items-center justify-center text-white text-3xl '>
       You have been successfully logged out
