@@ -34,6 +34,8 @@ export async function POST(request: NextRequest) {
     
     await newUser.save();
 
+    console.log("token is signup:- ", accessToken, refreshToken);
+
 
     const response = NextResponse.json({
         message: "User Signed-Up Successfully"

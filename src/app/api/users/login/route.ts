@@ -28,6 +28,8 @@ export async function POST(request: NextRequest){
 
         const {accessToken, refreshToken} = await isUserExists.generateRefreshAndAccessToken();
 
+        console.log("both tokens:- ",accessToken, refreshToken);
+
         const response = NextResponse.json(
           {
             message: "Use logged in successfully",
